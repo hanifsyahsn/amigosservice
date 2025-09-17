@@ -1,0 +1,7 @@
+com\amigoscode\apigw\ApiGWApplication.class
+com\amigoscode\apigw\util\JwtUtil.class
+com\amigoscode\apigw\config\GatewayConfig.class
+com\amigoscode\apigw\filter\JwtAuthenticationFilter.class
+com\amigoscode\apigw\config\SecurityConfig.class
+com\amigoscode\apigw\exception\jwt\JwtTokenMalformedException.class
+com\amigoscode\apigw\exception\jwt\JwtTokenMissingException.class

@@ -1,0 +1,8 @@
+com\amigoscode\notification\service\NotificationService.class
+com\amigoscode\notification\controller\NotificationController.class
+com\amigoscode\notification\rabbitmq\NotificationConsumer.class
+com\amigoscode\notification\config\NotificationConfig.class
+com\amigoscode\notification\model\Notification.class
+com\amigoscode\notification\model\Notification$NotificationBuilder.class
+com\amigoscode\notification\repository\NotificationRepository.class
+com\amigoscode\notification\NotificationApplication.class

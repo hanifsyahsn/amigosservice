@@ -1,0 +1,27 @@
+server:
+  port: 8021
+spring:
+  application:
+    name: auth
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://postgres:5432/user
+    password: 12345
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  zipkin:
+    base-url: http://zipkin:9411
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+    enabled: false
+jwt:
+  jwtSecret: 5Z1qN4SwG4e9Yqy3pQMqhlHXywsM2PYX
+  jwtExpirationMs: 86400000
+  jwtRefreshExpirationMs: 172800000

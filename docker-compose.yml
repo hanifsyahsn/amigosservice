@@ -1,0 +1,151 @@
+services:
+  postgres:
+    container_name: postgres
+    image: mdillon/postgis:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      PGDATA: /data/postgres
+    volumes:
+      - ./postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - spring
+  rabbitmq:
+    image: rabbitmq:3.9.11-management-alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - spring
+#  eureka-server:
+#    image: hanifsyahsn/eureka-server:latest
+#    container_name: eureka-server
+#    ports:
+#      - "8761:8761"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#    depends_on:
+#      - zipkin
+#  apigw:
+#    image: hanifsyahsn/apigw:latest
+#    container_name: apigw
+#    ports:
+#      - "8025:8025"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+##    links:
+##      - keycloak
+#    networks:
+#      - spring
+#    depends_on:
+#      - zipkin
+#      - eureka-server
+#      - keycloak
+#  customer:
+#    image: hanifsyahsn/customers:latest
+#    container_name: customer
+#    ports:
+#      - "8828:8828"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - postgres
+#      - rabbitmq
+#  fraud:
+#    image: hanifsyahsn/fraud:latest
+#    container_name: fraud
+#    ports:
+#      - "8818:8818"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#      - postgres
+#    depends_on:
+#      - postgres
+#      - zipkin
+#  notification:
+#    image: hanifsyahsn/notification:latest
+#    container_name: notification
+#    ports:
+#      - "8323:8323"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#      - postgres
+#    depends_on:
+#      - postgres
+#      - rabbitmq
+#      - zipkin
+#  auth:
+#    image: hanifsyahsn/auth:latest
+#    container_name: auth
+#    ports:
+#      - "8021:8021"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#      - postgres
+#    depends_on:
+#      - postgres
+#      - zipkin
+#  keycloak:
+#    image: quay.io/keycloak/keycloak:latest
+#    container_name: "keycloak"
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - spring
+#    command:
+#      - start-dev
+#    environment:
+#      - KEYCLOAK_ADMIN=admin
+#      - KEYCLOAK_ADMIN_PASSWORD=admin
+#      - KEYCLOAK_HOSTNAME=keycloak
+networks:
+  spring:
+    driver: bridge
+  postgres:
+    driver: bridge
+
+#  pgadmin:
+#    container_name: postgresql
+#    image: dpage/pgadmin4
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: hanifsyahsn@gmail.com
+#      PGADMIN_DEFAULT_PASSWORD: lordofsky1
+#      PGADMIN_CONFIG_SERVER_MODE: 'False'
+#    volumes:
+#      - pgadmin:/var/lib/pgadmin
+#    ports:
+#      - "5050:80"
+#    networks:
+#      - postgres
+#    restart: unless-stopped
+#
+#networks:
+#  postgres:
+#    driver: bridge
+#
+#volumes:
+#  postgres:
+#  pgadmin:

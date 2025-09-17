@@ -1,0 +1,4 @@
+jwt:
+  jwtSecret: 5Z1qN4SwG4e9Yqy3pQMqhlHXywsM2PYX
+  jwtExpirationMs: 86400000
+  jwtRefreshExpirationMs: 172800000

@@ -1,0 +1,9 @@
+com\amigoscode\customers\config\CustomerConfig.class
+com\amigoscode\customers\repository\CustomerRepository.class
+com\amigoscode\customers\controller\CustomerController.class
+com\amigoscode\customers\controller\HealthCheckController.class
+com\amigoscode\customers\model\Customer$CustomerBuilder.class
+com\amigoscode\customers\CustomersApplication.class
+com\amigoscode\customers\model\Customer.class
+com\amigoscode\customers\request\CustomerRegistrationRequest.class
+com\amigoscode\customers\service\CustomerService.class

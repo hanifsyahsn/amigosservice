@@ -1,0 +1,7 @@
+C:\Users\hanif\Documents\Java\amigosservices\apigw\src\main\java\com\amigoscode\apigw\ApiGWApplication.java
+C:\Users\hanif\Documents\Java\amigosservices\apigw\src\main\java\com\amigoscode\apigw\exception\jwt\JwtTokenMissingException.java
+C:\Users\hanif\Documents\Java\amigosservices\apigw\src\main\java\com\amigoscode\apigw\util\JwtUtil.java
+C:\Users\hanif\Documents\Java\amigosservices\apigw\src\main\java\com\amigoscode\apigw\exception\jwt\JwtTokenMalformedException.java
+C:\Users\hanif\Documents\Java\amigosservices\apigw\src\main\java\com\amigoscode\apigw\config\SecurityConfig.java
+C:\Users\hanif\Documents\Java\amigosservices\apigw\src\main\java\com\amigoscode\apigw\config\GatewayConfig.java
+C:\Users\hanif\Documents\Java\amigosservices\apigw\src\main\java\com\amigoscode\apigw\filter\JwtAuthenticationFilter.java
